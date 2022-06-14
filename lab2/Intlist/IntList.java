@@ -107,7 +107,7 @@ public class IntList {
             IntList pret = ret;
             while (pB.rest != null){
                 pB = pB.rest;
-                pret.rest = new IntList(pB.rest.first, null);
+                pret.rest = new IntList(pB.first, null);
                 pret = pret.rest;
             }
             return ret;
