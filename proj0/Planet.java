@@ -27,12 +27,12 @@ public class Planet{
         return G * this.mass * other.mass / (r * r);
     }
     public double calcForceExertedByX(Planet other){
-        double dx = this.xxPos - other.xxPos;
+        double dx = -this.xxPos + other.xxPos;
 	double r = this.calcDistance(other);
 	return G * this.mass * other.mass * dx / (r * r * r);
     }
     public double calcForceExertedByY(Planet other){
-        double dy = this.yyPos - other.yyPos;
+        double dy = -this.yyPos + other.yyPos;
 	double r = this.calcDistance(other);
 	return G * this.mass * other.mass * dy / (r * r * r);
     }
