@@ -1,5 +1,5 @@
 public class Planet{
-    static final double G = 6.67e-11;
+    private static final double G = 6.67e-11;
     /** instance variables */
     public double xxPos;
     public double yyPos;
@@ -27,22 +27,12 @@ public class Planet{
         return G * this.mass * other.mass / (r * r);
     }
     public double calcForceExertedByX(Planet other){
-        double dx;
-	if (this.xxPos >= other.xxPos){
-	    dx = this.xxPos - other.xxPos;
-	} else{
-            dx = other.xxPos - this.xxPos;
-	}
+        double dx = this.xxPos - other.xxPos;
 	double r = this.calcDistance(other);
 	return G * this.mass * other.mass * dx / (r * r * r);
     }
     public double calcForceExertedByY(Planet other){
-        double dy;
-	if (this.yyPos >= other.yyPos){
-	    dy = this.yyPos - other.yyPos;
-	} else{
-            dy = other.yyPos - this.yyPos;
-	}
+        double dy = this.yyPos - other.yyPos;
 	double r = this.calcDistance(other);
 	return G * this.mass * other.mass * dy / (r * r * r);
     }
