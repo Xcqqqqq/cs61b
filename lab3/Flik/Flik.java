@@ -4,3 +4,4 @@ public class Flik {
         return a == b;
     }
 }
+// when Integers are greater than 127, the method always return false;
