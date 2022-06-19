@@ -16,9 +16,9 @@ public class ArrayDeque<T> {
     /**
      *
      * @param index: regard it as a normal array which indexes from 1 to size-1
-     * @return: the actual index of position <index> in the circular array deque ADT
+     * return the actual index of position <index> in the circular array deque ADT
      */
-    public int indexer(int index) {
+    private int indexer(int index) {
         index = front + index;
         while (index < 0) {
             index += capacity;
@@ -112,7 +112,7 @@ public class ArrayDeque<T> {
             System.out.print(items[index] + " ");
             p += 1;
         }
-        System.out.println("");
+        System.out.println();
     }
 
     public T removeFirst() {
@@ -155,5 +155,4 @@ public class ArrayDeque<T> {
             return items[indexer(index)];
         }
     }
-
 }

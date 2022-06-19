@@ -93,14 +93,14 @@ public class LinkedListDequeTest {
 		/* 1.add to empty deque(int) */
 		LinkedListDeque<Integer> d1 = new LinkedListDeque<>();
 		d1.addFirst(114514);
-		assertEquals(114514, d1.sentinel.next.item, 0);
-		assertEquals(1, d1.size);
+		assertEquals(114514, d1.get(0), 0);
+		assertEquals(1, d1.size());
 		/* 2.add to non-empty deque(String) */
 		LinkedListDeque<String> d2 = new LinkedListDeque<>("aaa");
 		d2.addFirst("bbb");
 		d2.addFirst("ccc");
-		assertEquals("aaa", d2.sentinel.next.next.next.item);
-		assertEquals(3, d2.size);
+		assertEquals("aaa", d2.get(2));
+		assertEquals(3, d2.size());
 	}
 
 	/**
@@ -111,32 +111,32 @@ public class LinkedListDequeTest {
 		/* 1.add to empty deque(double) */
 		LinkedListDeque<Double> d1 = new LinkedListDeque<>();
 		d1.addLast(114514.0);
-		assertEquals(114514, d1.sentinel.next.item, 0.0);
-		assertEquals(1, d1.size);
+		assertEquals(114514, d1.get(0), 0.0);
+		assertEquals(1, d1.size());
 		/* 2.add to non-empty deque(String) */
 		LinkedListDeque<String> d2 = new LinkedListDeque<>("aaa");
 		d2.addLast("bbb");
 		d2.addLast("ccc");
-		assertEquals("ccc", d2.sentinel.next.next.next.item);
-		assertEquals(3, d2.size);
+		assertEquals("ccc", d2.get(2));
+		assertEquals(3, d2.size());
 		/* 3.add to a deque constructed by addFirst */
 		LinkedListDeque<Integer> d3 = new LinkedListDeque<>();
 		d3.addFirst(114514);
 		d3.addFirst(1919);
 		d3.addFirst(810);
 		d3.addLast(514);
-		assertEquals(810, d3.sentinel.next.item, 0);
-		assertEquals(114514, d3.sentinel.next.next.next.item, 0);
-		assertEquals(514, d3.sentinel.next.next.next.next.item, 0);
-		assertEquals(4, d3.size);
+		assertEquals(810, d3.get(0), 0);
+		assertEquals(114514, d3.get(2), 0);
+		assertEquals(514, d3.get(3), 0);
+		assertEquals(4, d3.size());
 		/* 4.addFirst to a deque constructed by addLast */
 		LinkedListDeque<Boolean> d4 = new LinkedListDeque<>();
 		d4.addLast(false);
 		d4.addLast(true);
 		d4.addFirst(false);
-		assertEquals(false, d4.sentinel.next.item);
-		assertEquals(false, d4.sentinel.next.next.item);
-		assertEquals(true, d4.sentinel.next.next.next.item);
+		assertEquals(false, d4.get(0));
+		assertEquals(false, d4.get(1));
+		assertEquals(true, d4.get(2));
 	}
 
 	/**
@@ -240,4 +240,4 @@ public class LinkedListDequeTest {
 		addIsEmptySizeTest();
 		addRemoveTest();
 	}
-} 
+}

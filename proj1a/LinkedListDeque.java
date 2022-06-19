@@ -1,14 +1,9 @@
 public class LinkedListDeque<T> {
     /* subclass Node */
-    public class Node {
+    private class Node {
         public T item;
         public Node next;
         public Node prev;
-        public Node(T i) {
-            this.item = i;
-            this.next = null;
-            this.prev = null;
-        }
         public Node(T i, Node n, Node p) {
             this.item = i;
             this.next = n;
@@ -17,8 +12,8 @@ public class LinkedListDeque<T> {
     }
     /* record size so size() can be computed at constant time
      * sentinel's next point to the first Node, and prev points to the last Node */
-    int size;
-    Node sentinel;
+    private int size;
+    private Node sentinel;
     public LinkedListDeque() {
         this.size = 0;
         this.sentinel = new Node(null, null, null);
