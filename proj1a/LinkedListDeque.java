@@ -1,9 +1,9 @@
 public class LinkedListDeque<T> {
     /* subclass Node */
     private class Node {
-        public T item;
-        public Node next;
-        public Node prev;
+        private T item;
+        private Node next;
+        private Node prev;
         public Node(T i, Node n, Node p) {
             this.item = i;
             this.next = n;
@@ -17,11 +17,6 @@ public class LinkedListDeque<T> {
     public LinkedListDeque() {
         this.size = 0;
         this.sentinel = new Node(null, null, null);
-    }
-    public LinkedListDeque(T i) {
-        this.size = 1;
-        Node n = new Node(i, null, null);
-        this.sentinel = new Node(null, n, n);
     }
 
     public void addFirst(T item) {

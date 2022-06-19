@@ -23,7 +23,7 @@ public class ArrayDeque<T> {
         while (index < 0) {
             index += capacity;
         }
-        while (index >= capacity){
+        while (index >= capacity) {
             index -= capacity;
         }
         return index;
@@ -73,7 +73,7 @@ public class ArrayDeque<T> {
         return (front == -1 && back == -1);
     }
 
-    public void addFront(T item) {
+    public void addFirst(T item) {
         expand();
         if (front == -1 && back == -1) {
             items[0] = item;

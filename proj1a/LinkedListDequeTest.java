@@ -96,7 +96,8 @@ public class LinkedListDequeTest {
 		assertEquals(114514, d1.get(0), 0);
 		assertEquals(1, d1.size());
 		/* 2.add to non-empty deque(String) */
-		LinkedListDeque<String> d2 = new LinkedListDeque<>("aaa");
+		LinkedListDeque<String> d2 = new LinkedListDeque<>();
+		d2.addFirst("aaa");
 		d2.addFirst("bbb");
 		d2.addFirst("ccc");
 		assertEquals("aaa", d2.get(2));
@@ -114,7 +115,8 @@ public class LinkedListDequeTest {
 		assertEquals(114514, d1.get(0), 0.0);
 		assertEquals(1, d1.size());
 		/* 2.add to non-empty deque(String) */
-		LinkedListDeque<String> d2 = new LinkedListDeque<>("aaa");
+		LinkedListDeque<String> d2 = new LinkedListDeque<>();
+		d2.addFirst("aaa");
 		d2.addLast("bbb");
 		d2.addLast("ccc");
 		assertEquals("ccc", d2.get(2));
@@ -148,10 +150,12 @@ public class LinkedListDequeTest {
 		LinkedListDeque<Double> emp = new LinkedListDeque<>();
 		assertEquals(true, emp.isEmpty());
 		/* non-empty deque */
-		LinkedListDeque<Double> nonemp = new LinkedListDeque<>(0.0);
+		LinkedListDeque<Double> nonemp = new LinkedListDeque<>();
+		nonemp.addFirst(1.0);
 		assertEquals(false, nonemp.isEmpty());
 		/* test size() */
-		LinkedListDeque<Integer> d = new LinkedListDeque<>(0);
+		LinkedListDeque<Integer> d = new LinkedListDeque<>();
+		d.addFirst(1);
 		d.addFirst(2);
 		d.addLast(3);
 		assertEquals(3, d.size());
@@ -177,7 +181,8 @@ public class LinkedListDequeTest {
 		System.out.println("expected: 114.514 1919.810");
 		d2.printDeque();
 		/* String deque */
-		LinkedListDeque<String> d3 = new LinkedListDeque<>("henghengheng");
+		LinkedListDeque<String> d3 = new LinkedListDeque<>();
+		d3.addFirst("henghengheng");
 		d3.addLast("AHHHHHHHHHH");
 		d3.addLast("ahhhhh");
 		System.out.println("expected: henghengheng AHHHHHHHHHH ahhhhh");
@@ -201,10 +206,11 @@ public class LinkedListDequeTest {
 		assertEquals(null, emp.removeFirst());
 		assertEquals(null, emp.removeLast());
 		/* 1 Node */
-		LinkedListDeque<String> single = new LinkedListDeque<>("hello");
+		LinkedListDeque<String> single = new LinkedListDeque<>();
+		single.addFirst("hello");
 		assertEquals("hello", single.removeFirst());
 		assertEquals(null, single.removeLast());
-		single = new LinkedListDeque<>("hello");
+		single.addFirst("hello");
 		assertEquals("hello", single.removeLast());
 		assertEquals(null, single.removeFirst());
 		/* multiple Nodes */

@@ -5,27 +5,27 @@ public class ArrayDequeTest {
     @Test
     public void testAdd() {
         ArrayDeque<Integer> d = new ArrayDeque<>();
-        d.addFront(1);
+        d.addFirst(1);
         d.printDeque();
         d.addLast(2);
         d.printDeque();
-        d.addFront(3);
+        d.addFirst(3);
         d.printDeque();
         d.addLast(4);
         d.printDeque();
-        d.addFront(5);
+        d.addFirst(5);
         d.printDeque();
         d.addLast(6);
         d.printDeque();
-        d.addFront(7);
+        d.addFirst(7);
         d.printDeque();
         d.addLast(8);
         d.printDeque();
-        d.addFront(9);
+        d.addFirst(9);
         d.printDeque();
         d.addLast(10);
         d.printDeque();
-        d.addFront(11);
+        d.addFirst(11);
         d.printDeque();
         d.addLast(12);
         d.printDeque();
@@ -72,7 +72,7 @@ public class ArrayDequeTest {
         }
         d.printDeque();
         for (int i = 0; i < 12; i++) {
-            assertEquals(i+1, d.get(i), 0);
+            assertEquals(i + 1, d.get(i), 0);
         }
     }
 }
