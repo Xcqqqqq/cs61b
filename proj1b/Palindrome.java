@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+
 public class Palindrome {
     public Deque<Character> wordToDeque(String word) {
         Deque<Character> ret = new ArrayDeque<>();
