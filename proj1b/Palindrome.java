@@ -1,8 +1,6 @@
-import java.util.ArrayDeque;
-
 public class Palindrome {
     public Deque<Character> wordToDeque(String word) {
-        LinkedListDeque<Character> ret = new LinkedListDeque<>();
+        Deque<Character> ret = new ArrayDeque<>();
         for (int i = 0; i < word.length(); i++) {
             ret.addLast(word.charAt(i));
         }
@@ -26,8 +24,8 @@ public class Palindrome {
 
     public boolean isPalindrome(String word, CharacterComparator cc) {
         Deque<Character> deq = wordToDeque(word);
-        while(deq.size() >= 2) {
-            if (! cc.equalChars(deq.removeFirst(), deq.removeLast())) {
+        while (deq.size() >= 2) {
+            if (!cc.equalChars(deq.removeFirst(), deq.removeLast())) {
                 return false;
             }
         }
