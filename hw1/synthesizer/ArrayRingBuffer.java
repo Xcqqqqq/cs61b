@@ -69,26 +69,27 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     @Override
     public T peek() {
         // TODO: Return the first item. None of your instance variables should change.
-        return rb[first];
+        if (isEmpty()) {
+            throw new RuntimeException("Can't peek an empty queue");
+        } else {
+            return rb[first];
+        }
     }
 
     // TODO: When you get to part 5, implement the needed code to support iteration.
     private class ArrayRingBufferIterator implements Iterator<T> {
         private int pos;
-        private int currNum;
         public ArrayRingBufferIterator() {
             pos = first;
-            currNum = 0;
         }
 
         public boolean hasNext() {
-            return currNum < fillCount;
+            return !((pos + 1) % capacity == last);
         }
 
         public T next() {
             T retValue = rb[pos];
             pos = (pos + 1) % capacity;
-            currNum++;
             return retValue;
         }
     }
